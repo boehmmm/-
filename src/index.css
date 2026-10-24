@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-milk-100 font-sans text-cocoa-900 antialiased;
+  background-image:
+    radial-gradient(60rem 32rem at 8% -10%, rgba(203, 166, 117, 0.16), transparent 60%),
+    radial-gradient(48rem 30rem at 100% 0%, rgba(245, 233, 216, 0.9), transparent 55%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-caramel-200 text-cocoa-900;
+}
+
+/* Ползунок диапазона в цвете заливки трека (rgb(185 143 92) = caramel-500) */
+.range-filled::-webkit-slider-thumb {
+  appearance: none;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  background: rgb(185 143 92);
+  border: 3px solid #fffdfa;
+  box-shadow: 0 2px 6px rgb(94 78 56 / 0.28);
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.range-filled::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+}
+
+.range-filled::-moz-range-thumb {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  background: rgb(185 143 92);
+  border: 3px solid #fffdfa;
+  box-shadow: 0 2px 6px rgb(94 78 56 / 0.28);
+  cursor: pointer;
+}
+
+.range-filled:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgb(245 233 216);
+}
+
+.range-filled:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgb(245 233 216);
+}
